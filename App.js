@@ -1,38 +1,38 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-/**
- *
- * <div id=parent>
- *   <div id = child>
- *    <h1>i am h1</h1>
- *    <h2>i am h2</h1>
- *   </div>
- * <div id = child2>
- *    <h1>I am h1 tag</h1>
- *    <h2>I am h2 tag</h1>
- *   </div>
- * </div>
- */
 
-const parent = React.createElement('div', { id: 'parent' }, [
-  React.createElement('div', { id: 'child' }, [
-    React.createElement('h1', {}, 'Hello from the h1 '),
-    React.createElement('h1', {}, 'Hello from the h2')
-  ]),
-  React.createElement('div', { id: 'child2' }, [
-    React.createElement('h1', {}, 'Hello from the h1'),
-    React.createElement('h1', {}, 'Hello from the h2')
-  ])
-])
+const heading = React.createElement('h1', { id: 'heading' }, 'Namaste React ')
 
-const heading = React.createElement(
-  'h1',
-  { id: 'heading', xyz: 'abc' },
-  'Hello from the react'
+//jsx - is html and jsx like syntax
+
+const elem = <span>I'm span</span>
+
+// React Functional Component
+
+const HeadingComponent = () => <h1>This is Functional componet Heading</h1>
+
+const Title = () => (
+  <h1 id='heading' className='head' tabIndex={1}>
+    Namaste React using JSX
+    <HeadingComponent />
+  </h1>
 )
-// console.log(heading) // object
+
+const number = 10000
+
+const HeadingComponent1 = () => (
+  <>
+    <>
+      <>
+        <div className='container'>
+          <h1>This functional component</h1>
+          <h2>{Title()}</h2>
+        </div>
+        <div className='container 2 '></div>
+      </>
+    </>
+  </>
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
-
-root.render(parent)
-// console.log(root.render(heading))
+root.render(<HeadingComponent1 />)
